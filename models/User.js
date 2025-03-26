@@ -9,6 +9,6 @@ const userSchema = mongoose.Schema({
     password: {type: String, required: true}
 })
 
-const userModel = mongoose.model('GaitAnalysis-users', userSchema)
+const userModel = mongoose.model('MILK-SNF-users', userSchema)
 
 module.exports = userModel

@@ -1,3 +1,3 @@
-MongoDBURI=<mongodb uri>
-Port=4000
-SessionKey='Sk-Key'
+MongoDBURI=""
+Port=4001
+SessionKey=AR-KEY
