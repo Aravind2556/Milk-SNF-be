@@ -7,7 +7,7 @@ const MongoDbSession = require('connect-mongodb-session')(Session);
 require('dotenv').config();
 
 const app = Express();
-const port = process.env.Port || 4000;
+const port = process.env.Port || 4001;
 
 const corsOptions = { 
     origin: ["http://localhost:4002","https://milk-snf-fe.vercel.app"], 
