@@ -10,13 +10,14 @@ const app = Express();
 const port = process.env.Port || 4000;
 
 const corsOptions = { 
-    origin: ["http://localhost:4002"], 
+    origin: ["http://localhost:4002","https://milk-snf-fe.vercel.app"], 
     credentials: true,
 };
 
 app.use(cors(corsOptions));
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
+app.set('trust proxy', 1)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
@@ -40,12 +41,12 @@ app.use(Session({
     secret: process.env.SessionKey,
     resave: false,
     saveUninitialized: false,
-    store: store
-//  cookie:{
-    //     secure: true,
-    //     httpOnly: true,
-    //     sameSite: 'none'
-    // }
+    store: store,
+    cookie:{
+        secure: true,
+        httpOnly: true,
+        sameSite: 'none'
+    }
 }))
 
 app.use(AuthRouter) 
